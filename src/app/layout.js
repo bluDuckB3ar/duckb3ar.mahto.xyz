@@ -14,11 +14,11 @@ export default function RootLayout({ children }) {
     <html lang="en" className={inter.className}>
       <head>
         <meta name="description" content={metadata.description} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
         <link rel="icon" href="/duckb3ar-logo.svg" />
       </head>
       <body>
-        <div className="font-rachel ">          
+        <div className="">          
           <div>
             {children}
           </div>
