@@ -1,32 +1,16 @@
-"use client"
-import React, { useState } from "react";
-import Link from "next/link";
-import Navbar from "@/components/navbar";
+import Navbar from "./navbar";
 
-const UnderConstructionPage = ({ children, backTo = "/" }) => {
-  const size = {
-    fontSize: `${Math.min(window.innerWidth, window.innerHeight) * 0.05}px`,
-  };
-
+export default function UnderConstructionPage() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div>
       <Navbar />
-
-      <div className="text-center" style={size}>
-        Oh quak... this page is currently under construction...
+      <div className="h-screen flex flex-col items-center justify-center">
+        <h1 className="text-6xl font-bold">Under Construction</h1>
+        <p className="text-2xl">
+          This page is currently being worked on. Please check back later.
+        </p>
       </div>
-
-      <Link href={backTo}>
-        <span className="text-center underline" style={size}>
-          Go back home
-        </span>
-      </Link>
-
-      {children}
     </div>
   );
-};
-
-export default UnderConstructionPage;
-
+}
 
