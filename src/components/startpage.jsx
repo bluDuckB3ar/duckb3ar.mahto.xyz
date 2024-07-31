@@ -1,38 +1,37 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const links = [
-    { url: "/about", title: "About" },
-    { url: "/blog", title: "Blog" },
-    { url: "/contact", title: "Contact" },
-    { url: "/support", title: "Support" },
+  { url: "/about", title: "About" },
+  { url: "/blog", title: "Blog" },
+  { url: "/contact", title: "Contact" },
+  { url: "/support", title: "Support" },
 ];
 
 const StartPage = () => (
-    <div className="flex flex-col justify-center items-center flex-grow text-black bg-bear px-4 md:px-12 lg:px-24 xl:px-42">
-        <div className="w-full max-w-screen-xl">
-            <div className=" flex items-center justify-center  bg-bear text-rachel ">
-                <div className="flex items-end  ">
-                    <div className="flex items-end">
-                        <img src="/duckb3ar-logo.svg" alt="Duckb3ar Logo" className="h-16 md:h-64" />  
-                      <div className=" font-xl md:grid-cols-2 gap-4 md:gap-10 text-xl md:text-2xl px-4   ">
-                        <div className="text-8xl">test </div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div className="p-3 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-10 text-xl md:text-2xl px-4 sm:px-0">
-                {links.map((link) => (
-                    <Link key={link.title} href={link.url}>
-                        <button
-                            className="border-4 md:border-8 p-4 sm:p-8 md:p-16 border-black flex items-center justify-center w-full bg-bear text-black hover:bg-black hover:text-bear focus:bg-black focus:text-bear"
-                        >
-                            {link.title}
-                        </button>
-                    </Link>
-                ))}
-            </div>
-        </div>
+  <div className="flex flex-col justify-center items-center flex-grow bg-duck-night text-white px-4 md:px-12 lg:px-24 xl:px-42">
+    <div className="w-full max-w-screen-xl">
+      <div className="flex items-center justify-center bg-duck-night text-rachel">
+        <Image
+          src="/public/logo.svg"
+          alt="Duckb3ar Logo"
+          width={200}
+          height={200}
+          className="h-20 md:h-64"
+        />
+        <h1 className="text-md md:text-xl font-bold">duckb3ar</h1>
+      </div>
+      <div className="p-3 grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-10 text-xl md:text-2xl px-4 sm:px-0">
+        {links.map((link) => (
+          <Link key={link.title} href={link.url} className="w-full">
+            <button className="group relative inline-flex h-20 w-full items-center justify-center overflow-hidden rounded-md border bg-transparent  font-medium text-white  transition-all duration-100 [box-shadow:5px_5px_rgb(237_236_145)] active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0px_0px_rgb(237_236_145))]">
+              {link.title}
+            </button>
+          </Link>
+        ))}
+      </div>
     </div>
+  </div>
 );
 
 export default StartPage;
