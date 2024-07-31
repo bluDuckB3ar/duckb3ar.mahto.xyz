@@ -10,14 +10,14 @@ const Navbar = () => {
 
   const navLinks = [
     { href: "/about", text: "about", hoverClass: "hover:bg-duck-yellow hover:text-duck-night" },
-    { href: "/blog", text: "blog", hoverClass: "hover:bg-duck-pink hover:text-duck-night" },
+    { href: "/blog", text: "blog", hoverClass: "hover:bg-duck-yellow hover:text-duck-night" },
     { href: "/contact", text: "contact", hoverClass: "hover:bg-duck-red hover:text-duck-night" },
-    { href: "/support", text: "support", hoverClass: "hover:bg-duck-blue hover:text-duck-night" },
+    { href: "/support", text: "support",  hoverClass: "hover:bg-duck-blue hover:text-duck-night" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full flex items-center justify-between bg-duck-night text-white shadow-lg z-10">
-      <div className="flex items-center space-x-4 p-5">
+    <nav className="fixed top-0 left-0 w-screen flex items-center justify-between bg-duck-night text-white shadow-lg h-16 ">
+      <div className="flex items-center space-x-4 ">
         <Link href="/" onClick={() => setExpanded(false)} className="flex items-center">
           <Image
             src="/public/logo.svg"
