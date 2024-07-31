@@ -17,10 +17,18 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <div className="min-h-screen">
-          <div className="flex flex-col min-h-screen">
-            {pathname !== "/" && <Navbar />}
-            {children}
-          </div>
+          <main className="flex flex-col-auto row-span-2 min-h-screen">
+            {pathname !== "/" && (
+              <header>
+                <Navbar />
+              </header>
+            )}
+           <div className="m-10">
+
+           {children}
+
+           </div>
+          </main>
         </div>
       </body>
     </html>

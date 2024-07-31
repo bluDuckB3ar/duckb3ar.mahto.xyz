@@ -16,15 +16,10 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-screen flex items-center justify-between bg-duck-night text-white shadow-lg h-16 ">
-      <div className="flex items-center space-x-4 ">
+    <nav className="fixed top-0 left-0 w-screen flex items-center justify-between bg-duck-night text-white shadow-lg h-8 py-2 ">
+      <div clh-8ame="flex items-center space-x-4 ">
         <Link href="/" onClick={() => setExpanded(false)} className="flex items-center">
-          <Image
-            src="/public/logo.svg"
-            alt="Duckb3ar Logo"
-            width={500}
-            height={500}
-          />
+      
           <h1 className="text-md font-bold text-white ml-2">duckb3ar</h1>
         </Link>
       </div>
@@ -35,7 +30,15 @@ const Navbar = () => {
           }`}
           onClick={toggleExpanded}
         >
-          {expanded ? 'Close' : 'Menu'}
+          {expanded ? (
+            <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
         </button>
       </div>
       <div className={`absolute top-full left-0 w-full bg-duck-night md:static md:w-auto md:bg-transparent ${expanded ? 'block' : 'hidden'} md:block`}>
@@ -44,10 +47,11 @@ const Navbar = () => {
             <Link 
               key={link.href} 
               href={link.href} 
-              className={`px-3 py-2 rounded transition-colors duration-200 ${link.hoverClass}`}
+              className={`flex items-center justify-center px-3 py-2 rounded transition-colors duration-200 ${link.hoverClass}`}
               onClick={() => setExpanded(false)}
             >
-              {link.text}
+              <span className="mr-2">{link.text}</span>
+              <svg className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
             </Link>
           ))}
         </div>

@@ -1,8 +1,8 @@
+"use client";
 import UnderConstructionPage from "@/components/UnderConstructionPage";
-import React from "react";
+import React, { useState } from 'react';
 
-
-const BlogPage = ({ children }) => {
+const BlogPage = () => {
   return (
     <div>
     <UnderConstructionPage />
