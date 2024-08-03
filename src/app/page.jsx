@@ -1,9 +1,10 @@
 
 import StartPage from "@/components/startpage";
+import UnderConstructionPage from "@/components/UnderConstructionPage";
 
 const HomePage = () => (
-    <div className="flex flex-col min-h-screen overflow-hidden">
-        <StartPage />
+    <div className="align-middle flex-center">
+        <UnderConstructionPage />
     </div>
 );
 

@@ -1,7 +1,7 @@
 import React from "react";
 import UnderConstructionPage from "@/components/UnderConstructionPage";
 
-const SupportPage = ({ children }) => {
+const SupportPage = () => {
   return (
     <div>
     <UnderConstructionPage />
